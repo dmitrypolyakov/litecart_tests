@@ -1,0 +1,414 @@
+<html>
+<head><style type='text/css'>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-style: italic;
+}
+
+.selected {
+    background-color: #ffffcc;
+}
+
+.status_done {
+    background-color: #eeffee;
+}
+
+.status_passed {
+    background-color: #ccffcc;
+}
+
+.status_failed {
+    background-color: #ffcccc;
+}
+
+.breakpoint {
+    background-color: #cccccc;
+    border: 1px solid black;
+}
+</style><title>Test suite results</title></head>
+<body>
+<h1>Test suite results </h1>
+
+<table>
+<tr>
+<td>result:</td>
+<td>failed</td>
+</tr>
+<tr>
+<td>totalTime:</td>
+<td>15</td>
+</tr>
+<tr>
+<td>numTestTotal:</td>
+<td>5</td>
+</tr>
+<tr>
+<td>numTestPasses:</td>
+<td>4</td>
+</tr>
+<tr>
+<td>numTestFailures:</td>
+<td>1</td>
+</tr>
+<tr>
+<td>numCommandPasses:</td>
+<td>9</td>
+</tr>
+<tr>
+<td>numCommandFailures:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandErrors:</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Selenium Version:</td>
+<td>2.53</td>
+</tr>
+<tr>
+<td>Selenium Revision:</td>
+<td>.0</td>
+</tr>
+<tr>
+<td>
+<table id="suiteTable" class="selenium" border="1" cellpadding="1" cellspacing="1"><tbody>
+<tr class="title status_failed"><td><b>Test Suite</b></td></tr>
+<tr class="  status_passed"><td><a href="#testresult0">add_to_cart</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult1">remove_from_cart</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult2">preview_image</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult3">verify_categories</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult4">verify_homepage_blocks</a></td></tr>
+</tbody></table>
+
+
+</td>
+<td>&nbsp;</td>
+</tr>
+</table><table><tr>
+<td><a name="testresult0">add_to_cart.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">add_to_cart</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/en/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=li.product a.link</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>waitForElementPresent</td>
+	<td>name=quantity</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>storeEval</td>
+	<td>Math.floor(Math.random()*9 +1)</td>
+	<td>amount</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>storeText</td>
+	<td>css=span.price</td>
+	<td>price</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>storeEval</td>
+	<td>"${price}".substring(1)</td>
+	<td>price</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>storeEval</td>
+	<td>${amount}*${price}</td>
+	<td>total</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>storeText</td>
+	<td>css=h1.title</td>
+	<td>title</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>name=quantity</td>
+	<td>${amount}</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>name=add_cart_product</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>waitForText</td>
+	<td>css=div#cart a.content</td>
+	<td>Cart:<br> ${amount} item(s) - $${total}</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=div#cart a.link</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>waitForElementPresent</td>
+	<td>css=div#checkout-cart-wrapper</td>
+	<td></td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertValue</td>
+	<td>name=quantity</td>
+	<td>${amount}</td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertText</td>
+	<td>//div[@id='box-checkout-cart']/div/ul/li/form/div/p/a/strong</td>
+	<td>${title}</td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult1">remove_from_cart.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">remove_from_cart</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/en/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=div#cart a.link</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>waitForElementPresent</td>
+	<td>name=remove_cart_item</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>name=remove_cart_item</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>waitForElementPresent</td>
+	<td>css=div#checkout-cart-wrapper p em</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=div#logotype-wrapper a</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>waitForElementPresent</td>
+	<td>id=navigation</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult2">preview_image.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">preview_image</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/en/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>mouseOver</td>
+	<td>css=li.product a.fancybox</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=li.product a.fancybox</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>id=fancybox-close</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult3">verify_categories.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">verify_categories</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/en/</td>
+	<td></td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertAttribute</td>
+	<td>css=nav#site-menu li.category-1 a@href</td>
+	<td>http://demo.litecart.net/en/rubber-ducks-c-1/</td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertText</td>
+	<td>css=nav#site-menu li.category-1 a</td>
+	<td>Rubber Ducks</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Rubber Ducks</td>
+	<td></td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertElementPresent</td>
+	<td>css=li.product a.link</td>
+	<td></td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertAttribute</td>
+	<td>css=nav#site-menu li.category-2 a@href</td>
+	<td>http://demo.litecart.net/en/this-n-that-c-2/</td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertText</td>
+	<td>css=nav#site-menu li.category-2 a</td>
+	<td>This n' that</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=This n' that</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>assertElementNotPresent</td>
+	<td>css=li.product a.link</td>
+	<td>true</td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult4">verify_homepage_blocks.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">verify_homepage_blocks</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/en/</td>
+	<td></td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertCssCount</td>
+	<td>css=div#box-most-popular li.product</td>
+	<td>5</td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertCssCount</td>
+	<td>css=div#box-campaigns li.product</td>
+	<td>1</td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr></table><pre>
+info: Starting test /selenium-server/tests/add_to_cart.html
+info: Executing: |open | /en/ |  |
+info: Executing: |click | css=li.product a.link |  |
+info: Executing: |waitForElementPresent | name=quantity |  |
+info: Executing: |storeEval | Math.floor(Math.random()*9 +1) | amount |
+info: script is: Math.floor(Math.random()*9 +1)
+info: Executing: |storeText | css=span.price | price |
+info: Executing: |storeEval | &quot;${price}&quot;.substring(1) | price |
+info: script is: &quot;$20&quot;.substring(1)
+info: Executing: |storeEval | ${amount}*${price} | total |
+info: script is: 2*20
+info: Executing: |storeText | css=h1.title | title |
+info: Executing: |type | name=quantity | ${amount} |
+info: Selenium 1.0 (Core, RC, etc) is no longer under active development. Please update to WebDriver ASAP
+info: Executing: |click | name=add_cart_product |  |
+info: Selenium 1.0 (Core, RC, etc) is no longer under active development. Please update to WebDriver ASAP
+info: Executing: |waitForText | css=div#cart a.content | Cart:
+ ${amount} item(s) - $${total} |
+info: Executing: |click | css=div#cart a.link |  |
+info: Executing: |waitForElementPresent | css=div#checkout-cart-wrapper |  |
+info: Executing: |assertValue | name=quantity | ${amount} |
+info: Selenium 1.0 (Core, RC, etc) is no longer under active development. Please update to WebDriver ASAP
+info: Executing: |assertText | //div[@id=&apos;box-checkout-cart&apos;]/div/ul/li/form/div/p/a/strong | ${title} |
+info: Starting test /selenium-server/tests/remove_from_cart.html
+info: Executing: |open | /en/ |  |
+info: Executing: |click | css=div#cart a.link |  |
+info: Executing: |waitForElementPresent | name=remove_cart_item |  |
+info: Selenium 1.0 (Core, RC, etc) is no longer under active development. Please update to WebDriver ASAP
+info: Executing: |click | name=remove_cart_item |  |
+info: Executing: |waitForElementPresent | css=div#checkout-cart-wrapper p em |  |
+info: Executing: |click | css=div#logotype-wrapper a |  |
+info: Executing: |waitForElementPresent | id=navigation |  |
+info: Starting test /selenium-server/tests/preview_image.html
+info: Executing: |open | /en/ |  |
+info: Executing: |mouseOver | css=li.product a.fancybox |  |
+info: Executing: |click | css=li.product a.fancybox |  |
+info: Executing: |pause | 1000 |  |
+info: Executing: |click | id=fancybox-close |  |
+info: Starting test /selenium-server/tests/verify_categories.html
+info: Executing: |open | /en/ |  |
+info: Selenium 1.0 (Core, RC, etc) is no longer under active development. Please update to WebDriver ASAP
+info: Executing: |assertAttribute | css=nav#site-menu li.category-1 a@href | http://demo.litecart.net/en/rubber-ducks-c-1/ |
+info: Executing: |assertText | css=nav#site-menu li.category-1 a | Rubber Ducks |
+info: Executing: |clickAndWait | link=Rubber Ducks |  |
+info: Executing: |assertElementPresent | css=li.product a.link |  |
+info: Executing: |assertAttribute | css=nav#site-menu li.category-2 a@href | http://demo.litecart.net/en/this-n-that-c-2/ |
+info: Executing: |assertText | css=nav#site-menu li.category-2 a | This n&apos; that |
+info: Executing: |clickAndWait | link=This n&apos; that |  |
+info: Executing: |assertElementNotPresent | css=li.product a.link |  |
+error: true
+warn: currentTest.recordFailure: true
+info: Starting test /selenium-server/tests/verify_homepage_blocks.html
+info: Executing: |open | /en/ |  |
+info: Executing: |assertCssCount | css=div#box-most-popular li.product | 5 |
+info: Selenium 1.0 (Core, RC, etc) is no longer under active development. Please update to WebDriver ASAP
+info: Executing: |assertCssCount | css=div#box-campaigns li.product | 1 |
+</pre></body></html>
