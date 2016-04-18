@@ -28,13 +28,38 @@
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>Math.floor(Math.random()*19 +1)</td>
+	<td>Math.floor(Math.random()*9 +1)</td>
 	<td>amount</td>
 </tr>
 <tr>
+	<td>storeElementPresent</td>
+	<td>css=#box-product .campaign-price</td>
+	<td>hasCampaign</td>
+</tr>
+<tr>
+	<td>if</td>
+	<td>${hasCampaign}</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeText</td>
-	<td>css=span.price</td>
+	<td>css=#box-product .campaign-price</td>
 	<td>price</td>
+</tr>
+<tr>
+	<td>else</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=#box-product span.price</td>
+	<td>price</td>
+</tr>
+<tr>
+	<td>endIf</td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
@@ -50,6 +75,26 @@
 	<td>storeText</td>
 	<td>css=h1.title</td>
 	<td>title</td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>name=options[Size]</td>
+	<td>hasSize</td>
+</tr>
+<tr>
+	<td>if</td>
+	<td>${hasSize}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=options[Size]</td>
+	<td>label=Small</td>
+</tr>
+<tr>
+	<td>endIf</td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>

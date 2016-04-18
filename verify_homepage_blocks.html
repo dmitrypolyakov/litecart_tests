@@ -26,7 +26,46 @@
 	<td>css=div#box-campaigns li.product</td>
 	<td>1</td>
 </tr>
-
+<tr>
+	<td>forJson</td>
+	<td>prices.json</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>css=a[title=&quot;${title}&quot;] .campaign-price</td>
+	<td>hasCampaign</td>
+</tr>
+<tr>
+	<td>if</td>
+	<td>${hasCampaign}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=a[title=&quot;${title}&quot;] .campaign-price</td>
+	<td>${price}</td>
+</tr>
+<tr>
+	<td>else</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=a[title=&quot;${title}&quot;] .price</td>
+	<td>${price}</td>
+</tr>
+<tr>
+	<td>endIf</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>endForJson</td>
+	<td></td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
